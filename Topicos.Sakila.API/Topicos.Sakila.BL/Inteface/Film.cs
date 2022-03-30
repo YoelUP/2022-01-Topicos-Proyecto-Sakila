@@ -15,10 +15,17 @@ namespace Topicos.Sakila.BL.Inteface
             return _result;
         }
 
-        public Model.Models.FilmDTO? BuscarPorIdDTO(ushort id)
+        public Model.Models.FilmDTO? SearchByIdDTO(ushort id)
         {
             var _repository = new Repository.Film();
-            var _result = _repository.BuscarPorIdDTO(id);
+            var _result = _repository.SearchByIdDTO(id);
+            return _result;
+        }
+
+        public Model.Models.FilmDTO? SearchByTitleDTO(string title)
+        {
+            var _repository = new Repository.Film();
+            var _result = _repository.SearchByTitleDTO(title);
             return _result;
         }
     }

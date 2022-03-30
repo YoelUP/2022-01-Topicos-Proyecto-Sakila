@@ -30,20 +30,33 @@ namespace Topicos.Sakila.API.Controllers
             return Ok(_result);
         }
 
-
-
         // GET: api/Films/5
-        [HttpGet("{id}")]
-        public ActionResult<FilmDTO> GetFilm(ushort id)
+        [HttpGet("Id/{id}")]
+        public ActionResult<FilmDTO> GetFilmId(ushort id)
         {
             var _service = new Topicos.Sakila.BL.Inteface.Film();
-            var _result = _service.BuscarPorIdDTO(id);
+            var _result = _service.SearchByIdDTO(id);
             if (_result == null)
             {
                 return NotFound();
             }
             return Ok(_result);
         }
+
+        // GET: api/Films/Title/ADAPTATION HOLES
+        [HttpGet("Title/{title}")]
+        public ActionResult<FilmDTO> GetFilmTitle(string title)
+        {
+            var _service = new Topicos.Sakila.BL.Inteface.Film();
+            var _result = _service.SearchByTitleDTO(title);
+            if (_result == null)
+            {
+                return NotFound();
+            }
+            return Ok(_result);
+        }
+
+
 
         //// PUT: api/Films/5
         //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754

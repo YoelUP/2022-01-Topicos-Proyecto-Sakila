@@ -9,7 +9,6 @@ namespace Topicos.Sakila.Model.Models
     public partial class FilmActorDTO
     {
         public ushort ActorId { get; set; }
-        public string ActorFirstName { get; set; } = null!;
-        public string ActorLastName { get; set; } = null!;
+        public string ActorFullname { get; set; } = null!;
     }
 }

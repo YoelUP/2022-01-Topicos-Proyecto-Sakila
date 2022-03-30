@@ -41,11 +41,24 @@ namespace Topicos.Sakila.BL.Repository
             return result;
         }
 
-        public Model.Models.FilmDTO? BuscarPorIdDTO(ushort id)
+        public Model.Models.FilmDTO? SearchByIdDTO(ushort id)
         {
             Model.Models.FilmDTO? resultDTO = null;
             var result = _context.Films.Include(f => f.FilmCategories).ThenInclude(fc => fc.Category).
                 Include(f => f.FilmActors).ThenInclude(fa => fa.Actor).FirstOrDefault(f => f.FilmId == id);
+            if (result != null)
+            {
+                resultDTO = _mapper.Map<FilmDTO>(result);
+            }
+            return resultDTO;
+        }
+
+        public Model.Models.FilmDTO? SearchByTitleDTO(string title)
+        {
+            Model.Models.FilmDTO? resultDTO = null;
+            var result = _context.Films.Include(f => f.FilmCategories).ThenInclude(fc => fc.Category).
+                Include(f => f.FilmActors).ThenInclude(fa => fa.Actor).
+                FirstOrDefault(f => f.Title == title);
             if (result != null)
             {
                 resultDTO = _mapper.Map<FilmDTO>(result);
