@@ -13,7 +13,7 @@ namespace Topicos.Sakila.Model.MyModels
             get
             {
                 var result = string.Empty;
-                result += this.Custumers;
+                result += this.Costumers;
                 result += " " + this.AddresId;
                 return result;
             }

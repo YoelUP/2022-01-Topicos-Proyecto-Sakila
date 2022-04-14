@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Topicos.Sakila.API", "Topic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Topicos.Sakila.Model", "..\Topicos.Sakila.Model\Topicos.Sakila.Model.csproj", "{C0BC34B3-BD54-4D0F-BCC3-6AEC3C74AE98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Topicos.Sakila.BL", "Topicos.Sakila.BL\Topicos.Sakila.BL.csproj", "{9FFE64E8-6206-4DA9-9407-82C8B5D3F295}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Topicos.Sakila.BL", "Topicos.Sakila.BL\Topicos.Sakila.BL.csproj", "{9FFE64E8-6206-4DA9-9407-82C8B5D3F295}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
